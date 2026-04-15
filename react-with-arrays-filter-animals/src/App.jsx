@@ -63,7 +63,7 @@ export default function App() {
   <ul>
         {animalsToDisplay.map((animal) => (
           <li key={animal.id}>
-            {animal.emoji} {animal.name}
+            {animal.emoji} <span>{animal.name}</span>
           </li>
         ))}
       </ul>
