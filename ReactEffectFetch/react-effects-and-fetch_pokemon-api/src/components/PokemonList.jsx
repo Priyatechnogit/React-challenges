@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 export default function PokemonList() {
   const [pokemon, setPokemon] = useState([]);
@@ -13,11 +13,16 @@ export default function PokemonList() {
     }
   }
 
+  useEffect(()=>{
+    // Run loadPokemon on first render
+    loadPokemon();
+  },[] ); // empty array = run once on mount
+
   return (
     <main>
-      <button type="button" onClick={loadPokemon}>
+     {/*  <button type="button" onClick={loadPokemon}>
         Load Pokémon
-      </button>
+      </button> */}
       <ul>
         {pokemon.map(({ name }) => (
           <li key={name}>{name}</li>
